@@ -4,7 +4,7 @@
 
 Name:		%{?scl_prefix}%{pkg_name}
 Version:	1.6
-Release:	16.12%{?dist}
+Release:	16.13%{?dist}
 Summary:	Parent POM files for geronimo-specs
 License:	ASL 2.0
 URL:		http://geronimo.apache.org/
@@ -24,7 +24,7 @@ The Project Object Model files for the geronimo-specs modules.
 
 %prep
 %setup -c -T -n %{pkg_name}-%{version}
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 cp -p %{SOURCE0} .
 cp -p %{SOURCE1} LICENSE
@@ -34,14 +34,14 @@ cp -p %{SOURCE1} LICENSE
 %{?scl:EOF}
 
 %build
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_alias : org.apache.geronimo.specs:specs
 %mvn_build
 %{?scl:EOF}
 
 %install
-%{?scl:scl enable maven30 %{scl} - <<"EOF"}
+%{?scl:scl enable %{scl} - <<"EOF"}
 set -e -x
 %mvn_install
 %{?scl:EOF}
@@ -52,6 +52,9 @@ set -e -x
 
 
 %changelog
+* Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.6-16.13
+- maven33 rebuild #2
+
 * Sat Jan 09 2016 Michal Srb <msrb@redhat.com> - 1.6-16.12
 - maven33 rebuild
 
