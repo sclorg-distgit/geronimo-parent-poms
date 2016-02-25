@@ -4,7 +4,7 @@
 
 Name:		%{?scl_prefix}%{pkg_name}
 Version:	1.6
-Release:	16.13%{?dist}
+Release:	16.14%{?dist}
 Summary:	Parent POM files for geronimo-specs
 License:	ASL 2.0
 URL:		http://geronimo.apache.org/
@@ -14,7 +14,7 @@ BuildArch:	noarch
 Source0:	http://svn.apache.org/repos/asf/geronimo/specs/tags/specs-parent-%{version}/pom.xml
 Source1:	http://www.apache.org/licenses/LICENSE-2.0.txt
 
-BuildRequires:  %{?scl_prefix_java_common}maven-local
+BuildRequires:  %{?scl_prefix}maven-local
 BuildRequires:	%{?scl_prefix_java_common}javapackages-tools
 
 # Dependencies and plugins from the POM files
@@ -52,6 +52,9 @@ set -e -x
 
 
 %changelog
+* Mon Feb 08 2016 Michal Srb <msrb@redhat.com> - 1.6-16.14
+- Fix BR on maven-local & co.
+
 * Mon Jan 11 2016 Michal Srb <msrb@redhat.com> - 1.6-16.13
 - maven33 rebuild #2
 
