@@ -3,7 +3,7 @@
 
 Name:           %{?scl_prefix}geronimo-parent-poms
 Version:        1.6
-Release:        23.1%{?dist}
+Release:        23.2%{?dist}
 Summary:        Parent POM files for geronimo-specs
 License:        ASL 2.0
 URL:            http://geronimo.apache.org/
@@ -41,6 +41,9 @@ cp -p %{SOURCE1} LICENSE
 %doc LICENSE
 
 %changelog
+* Thu Jun 22 2017 Michael Simacek <msimacek@redhat.com> - 1.6-23.2
+- Mass rebuild 2017-06-22
+
 * Wed Jun 21 2017 Java Maintainers <java-maint@redhat.com> - 1.6-23.1
 - Automated package import and SCL-ization
 
